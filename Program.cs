@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-
+        Console.WriteLine(NumberToString());
         }
         static double TinhToan()
         {
@@ -70,5 +70,54 @@
                 if (IsPrime(i)) Console.Write(i + " ");
             }
         }
+
+        static bool IsEven(int n) => n % 2 == 0;
+
+        static void SplitArray(int[] arr)
+
+    {
+        var evenListNumber = new List<int>();
+        var oddListNumber = new List<int>();
+        foreach (int i in arr)
+        {
+            if(IsEven(i)) evenListNumber.Add(i);
+            else oddListNumber.Add(i);
+        }
+        Console.WriteLine("Mảng số lẻ là: ");
+        foreach(int i  in oddListNumber)
+        {
+            Console.Write(i+" ");
+        }
+        Console.WriteLine();
+        Console.WriteLine("Mảng số chẵn là: ");
+        foreach (int i in evenListNumber)
+        {
+            Console.Write(i + " ");
+        }
     }
+
+    static string NumberToString()
+    {
+        Console.Write("Mời bạn nhập 1 số từ 1 -> 9: ");
+
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            return number switch
+            {
+                1 => "one",
+                2 => "two",
+                3 => "three",
+                4 => "four",
+                5 => "five",
+                6 => "six",
+                7 => "seven",
+                8 => "eight",
+                9 => "nine",
+                _ => "Số không hợp lệ"
+            };
+        }
+
+        return "Vui lòng nhập số hợp lệ";
+    }
+}
 
