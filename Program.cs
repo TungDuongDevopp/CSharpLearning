@@ -1,4 +1,4 @@
-﻿namespace Buoi1;
+﻿namespace CSharpLearning;
 
     internal class Program
     {
