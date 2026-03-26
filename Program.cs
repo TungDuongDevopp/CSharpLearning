@@ -1,4 +1,5 @@
-﻿using System.Net.WebSockets;
+﻿
+
 
 namespace CSharpLearning;
 
@@ -6,11 +7,16 @@ namespace CSharpLearning;
     {
         static void Main(string[] args)
         {
-        var sv1 = new SinhVien("2221050152","Duong",22,9.1,8.6);
-        var kq = sv1.DanhGiaHocLuc(sv1);
-        Console.WriteLine(kq);
-      
+
+        var data = new Student_Manager();
+        var kq = data.DataFromFile();
+        foreach (var item in kq)
+        {
+            Console.WriteLine(item.ToString());
         }
+
+
+    }
        
-}
+    }
 

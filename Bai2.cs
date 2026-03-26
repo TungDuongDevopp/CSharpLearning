@@ -74,6 +74,10 @@ public struct SinhVien
         GPA1 = gpa1;
         GPA2 = gpa2;
     }
+    public override string ToString()
+    {
+        return $"ID: {Id}, Name: {Name}, Age: {Age}, GPA1: {GPA1}, GPA2: {GPA2}";
+    }
     public string DanhGiaHocLuc(SinhVien a)
     {
         double diemTb = (a.GPA1 + a.GPA2) / 2;
@@ -90,4 +94,3 @@ public struct SinhVien
 
     enum HocLuc { Xuatsac, Gioi, Kha, TrungBinh, Yeu };
 }
-
