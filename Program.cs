@@ -6,9 +6,10 @@ namespace CSharpLearning;
     {
         static void Main(string[] args)
         {
-        var B1 = new Bai1();
-         var kq = B1.TinhToan();
+        var sv1 = new SinhVien("2221050152","Duong",22,9.1,8.6);
+        var kq = sv1.DanhGiaHocLuc(sv1);
         Console.WriteLine(kq);
+      
         }
        
 }
