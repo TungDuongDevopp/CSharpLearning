@@ -8,7 +8,9 @@ namespace Data.Entity
 {
     public abstract class Shape
     {
-
+    
+        public abstract double TinhChuVi();
+        public abstract double TinhDienTich();
 
     }
 }
