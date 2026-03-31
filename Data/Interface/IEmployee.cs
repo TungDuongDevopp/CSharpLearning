@@ -8,7 +8,9 @@ namespace Data.Interface
 {
     public interface IEmployee
     {
-        public decimal TinhLuong();
-        public void DisplayInfo();
+        public void PrintEmloyee();
+        public void AddImployee();
+
+        public void RemoveImployee();
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data.Entity
 {
-    public class FullTime: Employee
+    public class FullTime: AEmployee
     {
         public FullTime(int id, string name, string type) : base(id, name, type)
         {

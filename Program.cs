@@ -1,6 +1,8 @@
 ﻿
 
 using Data.Entity;
+using Data.Helper;
+using Data.Management;
 
 
 namespace CSharpLearning;
@@ -10,13 +12,35 @@ namespace CSharpLearning;
         
     static void Main(string[] args)
     {
-       
-        var rectangle = new Rectangle(5, 10);
-        Console.WriteLine($"Chu vi hình chữ nhật: {rectangle.TinhChuVi()}");
-        Console.WriteLine($"Diện tích hình chữ nhật: {rectangle.TinhDienTich()}");
-        var circle = new Circle(7);
-        Console.WriteLine($"Chu vi hình tròn: {circle.TinhChuVi()}");
-        Console.WriteLine($"Diện tích hình tròn: {circle.TinhDienTich()}");
+        var manager = new EmployeeManager();
+
+        Console.WriteLine("1. Add from input");
+        Console.WriteLine("2. Add from file");
+
+        int choice = int.Parse(Console.ReadLine());
+
+        if (choice == 1)
+        {
+            var emp = EmployeeInput.FromConsole();
+            manager.Add(emp);
+        }
+        else if (choice == 2)
+        {
+            var reader = new EmployeeExcelReader();
+            var list = reader.Read();
+
+            foreach (var emp in list)
+            {
+                manager.Add(emp);
+            }
+        }
+
+        // Print
+        foreach (var emp in manager.GetAll())
+        {
+            Console.WriteLine(emp);
+        }
+
     }   
        
     }

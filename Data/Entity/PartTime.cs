@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data.Entity
 {
- public class PartTime : Employee
+ public class PartTime :AEmployee
     {
         public int HoursWorked { get; set; }
         public decimal HourlyRate { get; set; }
