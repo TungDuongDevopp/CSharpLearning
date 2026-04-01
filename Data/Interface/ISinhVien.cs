@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Data.Interface
 {
-    public interface IEmployee
+   public interface ISinhVien
     {
-        IReadOnlyList<Employee> GetAll();
-        void AddEmployee(Employee employee);
-        bool RemoveEmployee(int id);
+        IReadOnlyList<SinhVien> GetAll();
+            void AddStudent(SinhVien sinhVien);
+            bool RemoveStudent(string id);
     }
 }

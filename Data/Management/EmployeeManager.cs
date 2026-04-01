@@ -1,8 +1,9 @@
 ﻿using Data.Entity;
+using Data.Interface;
 
 namespace Data.Management
 {
-    public class EmployeeManager
+    public class EmployeeManager : IEmployee
     {
         private readonly List<Employee> _employees = new();
 
@@ -11,7 +12,7 @@ namespace Data.Management
             return _employees;
         }
 
-        public void Add(Employee employee)
+        public void AddEmployee(Employee employee)
         {
             if (employee == null)
                 throw new ArgumentNullException(nameof(employee));
@@ -19,7 +20,7 @@ namespace Data.Management
             _employees.Add(employee);
         }
 
-        public bool Remove(int id)
+        public bool RemoveEmployee(int id)
         {
             var emp = _employees.FirstOrDefault(e => e.Id == id);
             if (emp == null) return false;

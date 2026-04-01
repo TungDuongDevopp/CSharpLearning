@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,11 +7,16 @@ using System.Linq;
 namespace Data.Entity;
 
 public struct SinhVien
-{
-    string Id, Name;
-    int Age;
-    double GPA1, GPA2;
-    DateTime Birthday;
+
+{   public string Id { get; set; }
+
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public double GPA1 { get; set; }
+    public double GPA2 { get; set; }
+
+    public DateTime Birthday { get; set; }
 
     public SinhVien(string id, string name, int age, DateTime birthday, double gpa1, double gpa2)
     {
@@ -38,6 +44,7 @@ public struct SinhVien
             _ => HocLuc.Yeu.ToString()
         };
     }
+    public 
 
     enum HocLuc { Xuatsac, Gioi, Kha, TrungBinh, Yeu };
 }

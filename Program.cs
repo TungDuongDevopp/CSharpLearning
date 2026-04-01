@@ -12,7 +12,7 @@ namespace CSharpLearning;
         
     static void Main(string[] args)
     {
-        var manager = new EmployeeManager();
+        var student = new Student_Manager();
 
         Console.WriteLine("1. Add from input");
         Console.WriteLine("2. Add from file");
@@ -21,22 +21,22 @@ namespace CSharpLearning;
 
         if (choice == 1)
         {
-            var emp = EmployeeInput.FromConsole();
-            manager.Add(emp);
+            var emp = UserInput.FromConsoleStudent();
+            student.AddStudent(emp);
         }
         else if (choice == 2)
         {
-            var reader = new EmployeeExcelReader();
-            var list = reader.Read();
+            var reader = new UserExcelReader();
+            var list = reader.ReadStudentList();
 
             foreach (var emp in list)
             {
-                manager.Add(emp);
+                student.AddStudent(emp);
             }
         }
 
         // Print
-        foreach (var emp in manager.GetAll())
+        foreach (var emp in student.GetAll())
         {
             Console.WriteLine(emp);
         }
